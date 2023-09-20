@@ -1,25 +1,5 @@
-import { ClerkProvider } from '@clerk/nextjs';
-import Header from '../components/Header';
+import React from 'react';
 
-export const metadata = {
-  title: 'Next.js 13 with Clerk',
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <ClerkProvider>
-      <html lang="en">
-        <body>
-          <header>
-            <Header />
-          </header>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
-  );
+export default function page() {
+  return <main className="text-red-500 mt-20">Page</main>;
 }
