@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default async function paget() {
+export default async function onboarding() {
   return <div>paget</div>;
 }
