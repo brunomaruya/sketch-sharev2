@@ -11,7 +11,7 @@ export default function Leftbar() {
   return (
     <div className="">
       <div
-        className={`h-screen w-screen bg-black  absolute ${
+        className={`h-screen w-full bg-black  absolute ${
           isOpen ? 'opacity-50' : 'opacity-0'
         }  transition-opacity `}
       ></div>
