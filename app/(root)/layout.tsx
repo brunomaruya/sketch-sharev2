@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ThemeProviderTailwind from '@/context/TailwindThemeContext';
 import Leftbar from '@/components/Leftbar';
+import GlobalProvider from '@/context/GlobalProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <ThemeProviderTailwind>
+          <GlobalProvider>
             <ThemeLayout>
               <Header />
               <main className="flex">
@@ -31,7 +32,7 @@ export default function RootLayout({
                 {children}
               </main>
             </ThemeLayout>
-          </ThemeProviderTailwind>
+          </GlobalProvider>
         </body>
       </html>
     </ClerkProvider>

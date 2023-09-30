@@ -5,6 +5,7 @@ import Image from 'next/image';
 import image from '@/public/images/image.avif';
 import {
   ArrowLeftOnRectangleIcon,
+  Bars3Icon,
   BellIcon,
   MoonIcon,
   SunIcon,
@@ -18,27 +19,36 @@ import {
   SignedIn,
   UserButton,
 } from '@clerk/nextjs';
+import { AsideContext } from '@/context/AsideContext';
 
 export default function Header() {
   const { theme, setTheme } = useContext(TailwindThemeContext);
+  const { setIsOpen } = useContext(AsideContext);
 
   const handleTheme = () => {
     setTheme((theme) => (theme === '' ? 'dark' : ''));
   };
 
   return (
-    <header className="fixed w-full bg-background dark: dark:bg-dark_background top-0">
-      <div
-        className={`border-b-secondary dark:border-b-dark_secondary border-b-2 px-16 py-4 flex justify-between items-center shadow-lg  `}
-      >
-        <Link
-          href={'/'}
-          className="text-accent dark:text-primary  text-xl font-bold flex items-center gap-2"
-        >
-          <Image src={logo} alt="logo" width={24} height={24} />
+    <header className="fixed w-full bg-background dark: dark:bg-dark_background top-0 text-text dark:text-dark_text z-10">
+      <div className="header">
+        <div className="flex gap-2">
+          <div>
+            <Bars3Icon
+              className="h-9 w-9 cursor-pointer"
+              onClick={() => setIsOpen((isOpen) => !isOpen)}
+            />
+          </div>
+          <Link
+            href={'/'}
+            className="text-accent dark:text-primary  text-xl font-bold flex items-center gap-2"
+          >
+            <Image src={logo} alt="logo" width={24} height={24} />
 
-          <span>SketchShare</span>
-        </Link>
+            <span>SketchShare</span>
+          </Link>
+        </div>
+
         <nav>
           <ul className="flex gap-5 items-center">
             <li>
