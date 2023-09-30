@@ -1,0 +1,75 @@
+:root {
+  --dark_primary: #d7a3d5;
+  --dark_secondary: #271126;
+  --dark_text: #f1dff0;
+  --dark_background: #190b18;
+  --dark_accent: #b159ad;
+  --text: #190b18;
+  --background: #f1dff0;
+  --primary: #d7a3d5;
+  --secondary: #f1dff0;
+  --accent: #4d244b;
+}
+
+body {
+  background: var(--dark_background);
+}
+
+.cl-rootBox,
+.cl-signUp-root {
+  display: block;
+  width: 100%;
+}
+
+.cl-card,
+.cl-card,
+.cl-signIn-start {
+  background: var(--dark_background);
+  border-radius: 0;
+  width: 100%;
+}
+
+.cl-formButtonPrimary {
+  font-size: 14px;
+  text-transform: none;
+  background-color: var(--dark_primary);
+  color: var(--text);
+}
+
+.cl-internal-b3fm6y {
+  display: none;
+}
+
+.cl-formButtonPrimary:hover,
+.cl-formButtonPrimary:focus,
+.cl-formButtonPrimary:active {
+  background-color: var(--dark_primary);
+}
+img {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    max-width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    margin: 0;
+  }
+  .cl-card,
+  .cl-card,
+  .cl-signUp-start {
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 5rem;
+  }
+  img {
+    display: block;
+    width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+  }
+}
