@@ -6,6 +6,17 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --dark_primary: #d7a3d5;
+  --dark_secondary: #271126;
+  --dark_text: #f1dff0;
+  --dark_background: #190b18;
+  --dark_accent: #b159ad;
+  --text: #190b18;
+  --background: #f1dff0;
+  --primary: #d7a3d5;
+  --secondary: #f1dff0;
+  --accent: #4d244b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +35,28 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.cl-formButtonPrimary {
+  font-size: 14px;
+  text-transform: none;
+  background-color: var(--dark_primary);
+  color: var(--text);
+}
+
+.cl-formButtonPrimary:hover,
+.cl-formButtonPrimary:focus,
+.cl-formButtonPrimary:active {
+  background-color: var(--dark_primary);
+}
+
+.cl-rootBox,
+.cl-signIn-root {
+  width: 100%;
+  background: #fff;
+}
+
+.aside {
+  @apply fixed bg-background text-text dark:bg-dark_background dark:text-dark_text 
+  left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto  pb-5;
 }

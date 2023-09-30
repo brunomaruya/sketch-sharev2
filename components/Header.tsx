@@ -68,15 +68,15 @@ export default function Header() {
             <li>
               <UserButton afterSignOutUrl="/" />
             </li>
-            {/* <li>
-            <SignedIn>
-              <SignOutButton>
-                <div>
-                  <ArrowLeftOnRectangleIcon className="w-9 h-9 text-text" />
-                </div>
-              </SignOutButton>
-            </SignedIn>
-          </li> */}
+            <li>
+              <SignedIn>
+                <SignOutButton>
+                  <div>
+                    <ArrowLeftOnRectangleIcon className="w-9 h-9 text-text" />
+                  </div>
+                </SignOutButton>
+              </SignedIn>
+            </li>
           </ul>
         </nav>
       </div>
