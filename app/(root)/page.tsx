@@ -3,7 +3,7 @@ import HomeGallery from './components/HomeGallery';
 
 export default function page() {
   return (
-    <main className=" mt-20 h-full ">
+    <main className=" mt-20 h-full  ">
       <HomeGallery />
     </main>
   );

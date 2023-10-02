@@ -20,7 +20,7 @@ export default function Leftbar() {
       {/* dark transparent background  */}
       <div
         className={`h-screen w-full bg-black  absolute ${
-          isOpen ? 'opacity-50' : 'opacity-0'
+          isOpen ? 'opacity-50 block' : 'opacity-0 hidden'
         }  transition-opacity `}
       ></div>
       {/* ============ Aside ============*/}
