@@ -39,9 +39,9 @@ body {
 
 .aside {
   @apply fixed bg-background text-text dark:bg-dark_background dark:text-dark_text 
-  left-0 top-0  flex h-screen flex-col gap-7 overflow-auto  pb-5 px-10 pt-28 w-72;
+  left-0 top-0  flex justify-between h-screen flex-col overflow-auto  pb-5 px-7 pt-28 w-72;
 }
 
 .header {
-  @apply border-b-secondary dark:border-b-dark_secondary border-b-2 px-10 py-4 flex justify-between items-center shadow-lg;
+  @apply border-b-secondary dark:border-b-dark_secondary border-b-2 px-7 py-4 flex justify-between items-center shadow-lg;
 }

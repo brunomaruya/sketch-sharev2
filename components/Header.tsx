@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <header className="fixed w-full bg-background dark: dark:bg-dark_background top-0 text-text dark:text-dark_text z-10">
       <div className="header">
-        <div className="flex gap-2">
+        <div className="flex gap-4">
           <div>
             <Bars3Icon
               className="h-9 w-9 cursor-pointer"
@@ -77,15 +77,6 @@ export default function Header() {
             </li>
             <li>
               <UserButton afterSignOutUrl="/" />
-            </li>
-            <li>
-              <SignedIn>
-                <SignOutButton>
-                  <div>
-                    <ArrowLeftOnRectangleIcon className="w-9 h-9 text-text" />
-                  </div>
-                </SignOutButton>
-              </SignedIn>
             </li>
           </ul>
         </nav>
