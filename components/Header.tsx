@@ -34,90 +34,91 @@ export default function Header() {
   };
 
   return (
-    <header className="transition-all duration-700 fixed w-full bg-background dark: dark:bg-dark_background top-0 text-text dark:text-dark_text z-10">
-      {isSearchBarOpen ? (
-        <div className="header gap-3">
-          <div className="searchBarDivMb">
-            <MagnifyingGlassIcon className="text-text h-5 w-5" />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="searchBarInputMb"
+    <header className=" fixed w-full bg-background dark: dark:bg-dark_background top-0 text-text dark:text-dark_text z-10">
+      <div className={` header ${isSearchBarOpen ? 'flex' : 'hidden'}  gap-3`}>
+        <div className="searchBarDivMb">
+          <MagnifyingGlassIcon className="text-text h-5 w-5" />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="searchBarInputMb"
+          />
+        </div>
+        <div
+          className="cursor-pointer"
+          onClick={() => setIsSearchBarOpen((isOpen) => !isOpen)}
+        >
+          Cancel
+        </div>
+      </div>
+      {/* ================================================== */}
+      <div className={` header ${isSearchBarOpen ? 'hidden' : 'flex'}  gap-3`}>
+        <div className="flex items-center gap-1 md:gap-4">
+          <div>
+            <Bars3Icon
+              className="h-7 w-7  md:h-9 md:w-9 cursor-pointer"
+              onClick={() => setIsOpen((isOpen) => !isOpen)}
             />
           </div>
-          <div onClick={() => setIsSearchBarOpen((isOpen) => !isOpen)}>
-            Cancel
-          </div>
-        </div>
-      ) : (
-        <div className="header">
-          <div className="flex items-center gap-1 md:gap-4">
-            <div>
-              <Bars3Icon
-                className="h-7 w-7  md:h-9 md:w-9 cursor-pointer"
-                onClick={() => setIsOpen((isOpen) => !isOpen)}
-              />
+          <Link
+            href={'/'}
+            className="text-accent dark:text-primary font-bold flex  items-center gap-0 md:gap-2"
+          >
+            <div className="h-5 w-5 md:h-7 md:w-7">
+              <Image src={logo} alt="logo" />
             </div>
-            <Link
-              href={'/'}
-              className="text-accent dark:text-primary font-bold flex  items-center gap-0 md:gap-2"
-            >
-              <div className="h-5 w-5 md:h-7 md:w-7">
-                <Image src={logo} alt="logo" />
-              </div>
 
-              <span className="text-base md:text-lg">SketchShare</span>
-            </Link>
-          </div>
-
-          <div className="searchBarDiv">
-            <MagnifyingGlassIcon className="md:h-5 md:w-5" />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="searchBarInput"
-            />
-          </div>
-
-          <nav>
-            <ul className="flex gap-2 md:gap-5 items-center">
-              <li>
-                <MagnifyingGlassIcon
-                  onClick={() => setIsSearchBarOpen((isOpen) => !isOpen)}
-                  className=" h-7 w-7 md:hidden"
-                />
-              </li>
-              <li className="hidden md:block">
-                <button className="bg-primary py-1 px-2 rounded-md hover:brightness-75 transition-all active:brightness-50  ">
-                  <Link href={'/'}>
-                    <PlusIcon className="h-9 w-9 text-text " />
-                  </Link>
-                </button>
-              </li>
-              <li>
-                <Link href="/">
-                  <BellIcon className="h-7 w-7 md:h-9 md:w-9 text-text dark:text-dark_text" />
-                </Link>
-              </li>
-              <li className="text-text dark:text-dark_text cursor-pointer">
-                <button
-                  onClick={handleTheme}
-                  className="flex justify-center items-center"
-                >
-                  {theme === 'dark' ? (
-                    <MoonIcon className="h-7 w-7 md:h-9 md:w-9 leading-0" />
-                  ) : (
-                    <SunIcon className="h-7 w-7 md:h-9 md:w-9 leading-0" />
-                  )}
-                </button>
-              </li>
-              <li>
-                <UserButton afterSignOutUrl="/" />
-              </li>
-            </ul>
-          </nav>
+            <span className="text-base md:text-lg">SketchShare</span>
+          </Link>
         </div>
-      )}
+
+        <div className="searchBarDiv">
+          <MagnifyingGlassIcon className="md:h-5 md:w-5 cursor-pointer" />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="searchBarInput"
+          />
+        </div>
+
+        <nav>
+          <ul className="flex gap-2 md:gap-5 items-center">
+            <li>
+              <MagnifyingGlassIcon
+                onClick={() => setIsSearchBarOpen((isOpen) => !isOpen)}
+                className=" h-7 w-7 cursor-pointer md:hidden"
+              />
+            </li>
+            <li className="hidden md:block">
+              <button className="bg-primary py-1 px-2 rounded-md hover:brightness-75 transition-all active:brightness-50  ">
+                <Link href={'/'}>
+                  <PlusIcon className="h-9 w-9 text-text " />
+                </Link>
+              </button>
+            </li>
+            <li>
+              <Link href="/">
+                <BellIcon className="h-7 w-7 md:h-9 md:w-9 text-text dark:text-dark_text" />
+              </Link>
+            </li>
+            <li className="text-text dark:text-dark_text cursor-pointer">
+              <button
+                onClick={handleTheme}
+                className="flex justify-center items-center"
+              >
+                {theme === 'dark' ? (
+                  <MoonIcon className="h-7 w-7 md:h-9 md:w-9 leading-0" />
+                ) : (
+                  <SunIcon className="h-7 w-7 md:h-9 md:w-9 leading-0" />
+                )}
+              </button>
+            </li>
+            <li>
+              <UserButton afterSignOutUrl="/" />
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

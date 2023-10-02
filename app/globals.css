@@ -38,7 +38,7 @@ body {
 }
 
 .header {
-  @apply h-16 border-b-secondary dark:border-b-dark_secondary border-b-2 px-4 md:px-7 py-4 flex justify-between items-center shadow-lg;
+  @apply h-16 border-b-secondary dark:border-b-dark_secondary border-b-2 px-4 md:px-7 py-4  justify-between items-center shadow-lg;
 }
 
 .searchBarDiv {
