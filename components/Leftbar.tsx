@@ -13,19 +13,20 @@ import { HomeIcon } from '@heroicons/react/20/solid';
 import { AsideLinks } from '@/constants/AsideLinks';
 
 export default function Leftbar() {
-  const { isOpen } = useContext(AsideContext);
+  const { isOpen, setIsOpen } = useContext(AsideContext);
 
   return (
-    <div className="">
+    <div className="hidden md:block">
       {/* dark transparent background  */}
       <div
-        className={`h-screen w-full bg-black  absolute ${
+        onClick={() => setIsOpen((isOpen) => !isOpen)}
+        className={`h-full w-full bg-black  fixed ${
           isOpen ? 'opacity-50 block' : 'opacity-0 hidden'
         }  transition-opacity `}
       ></div>
       {/* ============ Aside ============*/}
       <aside
-        className={`aside  ${
+        className={`aside z-40  ${
           isOpen ? '' : '-translate-x-72'
         } transition-transform`}
       >

@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google';
 import ThemeProviderTailwind from '@/context/TailwindThemeContext';
 import Leftbar from '@/components/Leftbar';
 import GlobalProvider from '@/context/GlobalProvider';
+import MobileNav from '@/components/MobileNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
                 <Leftbar />
                 {children}
               </main>
+              <MobileNav />
             </ThemeLayout>
           </GlobalProvider>
         </body>

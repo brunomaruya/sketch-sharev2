@@ -34,7 +34,7 @@ export default function Header() {
   };
 
   return (
-    <header className=" fixed w-full bg-background dark: dark:bg-dark_background top-0 text-text dark:text-dark_text z-10">
+    <header className=" fixed w-full bg-background dark: dark:bg-dark_background top-0 text-text dark:text-dark_text z-50">
       <div className={` header ${isSearchBarOpen ? 'flex' : 'hidden'}  gap-3`}>
         <div className="searchBarDivMb">
           <MagnifyingGlassIcon className="text-text h-5 w-5" />
@@ -54,7 +54,7 @@ export default function Header() {
       {/* ================================================== */}
       <div className={` header ${isSearchBarOpen ? 'hidden' : 'flex'}  gap-3`}>
         <div className="flex items-center gap-1 md:gap-4">
-          <div>
+          <div className="hidden md:block">
             <Bars3Icon
               className="h-7 w-7  md:h-9 md:w-9 cursor-pointer"
               onClick={() => setIsOpen((isOpen) => !isOpen)}
@@ -113,7 +113,7 @@ export default function Header() {
                 )}
               </button>
             </li>
-            <li>
+            <li className="hidden md:block">
               <UserButton afterSignOutUrl="/" />
             </li>
           </ul>
