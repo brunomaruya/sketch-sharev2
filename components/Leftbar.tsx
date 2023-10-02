@@ -17,21 +17,23 @@ export default function Leftbar() {
 
   return (
     <div className="">
+      {/* dark transparent background  */}
       <div
         className={`h-screen w-full bg-black  absolute ${
           isOpen ? 'opacity-50' : 'opacity-0'
         }  transition-opacity `}
       ></div>
+      {/* ============ Aside ============*/}
       <aside
         className={`aside  ${
           isOpen ? '' : '-translate-x-72'
         } transition-transform`}
       >
         <section className="flex flex-col gap-7">
-          {AsideLinks.map((link) => {
+          {AsideLinks.map((link, id) => {
             return (
-              <Link href="/" className="flex gap-2 items-center">
-                <div className="h-9 w-9"> {link.icon}</div>
+              <Link href="/" key={id} className="flex gap-2 items-center">
+                <div className="h-7 w-7 md:h-9 md:w-9"> {link.icon}</div>
                 <span className="text-2xl">Home</span>
               </Link>
             );
