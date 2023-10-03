@@ -11,9 +11,12 @@ import { SignedIn, SignOutButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { HomeIcon } from '@heroicons/react/20/solid';
 import { AsideLinks } from '@/constants/AsideLinks';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Leftbar() {
   const { isOpen, setIsOpen } = useContext(AsideContext);
+  const router = useRouter();
+  const path = usePathname();
 
   return (
     <div className="hidden md:block">
@@ -41,17 +44,15 @@ export default function Leftbar() {
           })}
         </section>
         <SignedIn>
-          <SignOutButton>
-            <Link href={'/sign-in'}>
-              <div
-                className="flex gap-7 items-center cursor-pointer p-3
+          <SignOutButton signOutCallback={() => router.push('/sign-in')}>
+            <div
+              className="flex gap-7 items-center cursor-pointer p-3
              bg-primary dark:bg-dark_primary dark:text-text rounded-md 
              hover:brightness-75 transition-all active:brightness-50"
-              >
-                <ArrowLeftOnRectangleIcon className="w-9 h-9 text-text" />
-                <span>Log out</span>
-              </div>
-            </Link>
+            >
+              <ArrowLeftOnRectangleIcon className="w-9 h-9 text-text" />
+              <span>Log out</span>
+            </div>
           </SignOutButton>
         </SignedIn>
       </aside>
