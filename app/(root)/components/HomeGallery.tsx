@@ -4,6 +4,7 @@ import images from '@/data/images.json';
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
 import '../styles/Gallery.css';
+import ScrollReveal from '@/components/libs/ScrollReveal';
 
 export default function HomeGallery() {
   const breakpointColumnsObj = {
@@ -11,6 +12,7 @@ export default function HomeGallery() {
     1100: 3,
     700: 2,
   };
+
   return (
     <div className="mx-7">
       <Masonry
@@ -20,14 +22,16 @@ export default function HomeGallery() {
       >
         {images.data.map((image, id) => {
           return (
-            <div key={id} className="">
-              <Image
-                width={500}
-                height={500}
-                src={image.url}
-                alt="image"
-                className="mb-6 rounded-lg "
-              />
+            <div key={id}>
+              <ScrollReveal>
+                <Image
+                  width={500}
+                  height={500}
+                  src={image.url}
+                  alt="image"
+                  className="mb-6 rounded-lg sr "
+                />
+              </ScrollReveal>
             </div>
           );
         })}

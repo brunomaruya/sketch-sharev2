@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext } from 'react';
-import { TailwindThemeContext } from '../context/TailwindThemeContext';
+import { TailwindThemeContext } from '@/context/TailwindThemeContext';
 
 export default function ThemeLayout({
   children,

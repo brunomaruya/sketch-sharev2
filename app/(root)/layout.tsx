@@ -1,13 +1,13 @@
-import Header from '@/components/Header';
-import ThemeLayout from '@/components/ThemeLayout';
+import Header from '@/components/shared/Header';
+import ThemeLayout from '@/components/shared/ThemeLayout';
 import { ClerkProvider } from '@clerk/nextjs';
 import '../globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ThemeProviderTailwind from '@/context/TailwindThemeContext';
-import Leftbar from '@/components/Leftbar';
+import Leftbar from '@/components/shared/Leftbar';
 import GlobalProvider from '@/context/GlobalProvider';
-import MobileNav from '@/components/MobileNav';
+import MobileNav from '@/components/shared/MobileNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
