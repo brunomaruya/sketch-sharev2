@@ -8,8 +8,8 @@ export default function MobileNav() {
   const router = useRouter();
   const pathname = usePathname();
   return (
-    <div className="md:hidden fixed bottom-0 text-text dark:text-dark_text bg-background dark:bg-dark_background w-full h-16">
-      <div className="flex items-center sm:gap-20  gap-7 py-3 justify-center ">
+    <div className="mobileNavbarContainer">
+      <div className="mobileNavbarBox">
         {MobileNavLinks.map((link, id) => {
           const isActivate =
             (pathname.includes(link.url) && link.url.length > 1) ||

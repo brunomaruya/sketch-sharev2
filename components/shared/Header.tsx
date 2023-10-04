@@ -9,19 +9,13 @@ import {
   Bars3Icon,
   BellIcon,
   MagnifyingGlassIcon,
-  MicrophoneIcon,
   MoonIcon,
   SunIcon,
 } from '@heroicons/react/24/outline';
 import { PlusIcon } from '@heroicons/react/20/solid';
 import logo from '@/public/images/pencil .png';
 import { TailwindThemeContext } from '../../context/TailwindThemeContext';
-import {
-  SignOutButton,
-  SignUpButton,
-  SignedIn,
-  UserButton,
-} from '@clerk/nextjs';
+import { UserButton } from '@clerk/nextjs';
 import { AsideContext } from '@/context/AsideContext';
 
 export default function Header() {
@@ -34,10 +28,14 @@ export default function Header() {
   };
 
   return (
-    <header className=" fixed w-full bg-background dark: dark:bg-dark_background top-0 text-text dark:text-dark_text z-50">
-      <div className={` header ${isSearchBarOpen ? 'flex' : 'hidden'}  gap-3`}>
+    <header className=" headerContainer">
+      {/* //--------------------------------------------------------------------------------------//
+        //                                   SEARCH BAR OPEN                                    //
+        //--------------------------------------------------------------------------------------/ */}
+
+      <div className={` header ${isSearchBarOpen ? 'flex' : 'hidden'}  `}>
         <div className="searchBarDivMb">
-          <MagnifyingGlassIcon className="text-text h-5 w-5" />
+          <MagnifyingGlassIcon className="dark:text-text h-5 w-5" />
           <input
             type="text"
             placeholder="Search..."
@@ -51,8 +49,11 @@ export default function Header() {
           Cancel
         </div>
       </div>
-      {/* ================================================== */}
-      <div className={` header ${isSearchBarOpen ? 'hidden' : 'flex'}  gap-3`}>
+
+      {/* //--------------------------------------------------------------------------------------//
+        //                                   SEARCH BAR CLOSED                                    //
+        //--------------------------------------------------------------------------------------/ */}
+      <div className={` header ${isSearchBarOpen ? 'hidden' : 'flex'} `}>
         <div className="flex items-center gap-1 md:gap-4">
           <div className="hidden md:block">
             <Bars3Icon
@@ -60,10 +61,7 @@ export default function Header() {
               onClick={() => setIsOpen((isOpen) => !isOpen)}
             />
           </div>
-          <Link
-            href={'/'}
-            className="text-accent dark:text-primary font-bold flex  items-center gap-0 md:gap-2"
-          >
+          <Link href={'/'} className="logo">
             <div className="h-5 w-5 md:h-7 md:w-7">
               <Image src={logo} alt="logo" />
             </div>
@@ -73,7 +71,7 @@ export default function Header() {
         </div>
 
         <div className="searchBarDiv">
-          <MagnifyingGlassIcon className="md:h-5 md:w-5 cursor-pointer" />
+          <MagnifyingGlassIcon className="md:h-5 md:w-5 cursor-pointer dark:text-text" />
           <input
             type="text"
             placeholder="Search..."

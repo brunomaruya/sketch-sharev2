@@ -36,9 +36,26 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+/* //--------------------------------------------------------------------------------------//
+//                                                                                      //
+//                                    CUSTOM CLASSES                                    //
+//                                                                                      //
+//--------------------------------------------------------------------------------------// */
+
+/* //--------------------------------------------------------------------------------------//
+//                                        HEADER                                        //
+//--------------------------------------------------------------------------------------// */
+
+.headerContainer {
+  @apply fixed w-full bg-background dark:bg-dark_background top-0 text-text dark:text-dark_text z-50;
+}
 
 .header {
-  @apply h-16 border-b-secondary dark:border-b-dark_secondary border-b-2 px-4 md:px-7 py-4  justify-between items-center shadow-lg;
+  @apply h-16 border-b-secondary dark:border-b-dark_secondary border-b-2 px-4 md:px-7 py-4  justify-between items-center shadow-lg gap-3;
+}
+
+.logo {
+  @apply text-accent dark:text-primary font-bold flex  items-center gap-0 md:gap-2;
 }
 
 .searchBarDiv {
@@ -47,21 +64,39 @@ body {
   bg-white
   rounded-lg;
 }
-.searchBarInput {
-  @apply w-full  bg-transparent focus:outline-none hidden md:block;
-}
-
 .searchBarDivMb {
   @apply flex w-full  px-2 py-1
-   items-center gap-1
+  items-center gap-1
   bg-white
   rounded-lg;
+}
+
+.searchBarInput {
+  @apply w-full  bg-transparent focus:outline-none hidden md:block;
 }
 .searchBarInputMb {
   @apply w-full  bg-transparent focus:outline-none;
 }
-
+/* //--------------------------------------------------------------------------------------//
+//                                        ASIDE                                        //
+//--------------------------------------------------------------------------------------// */
 .aside {
   @apply fixed bg-background text-text dark:bg-dark_background dark:text-dark_text 
   left-0 top-0  flex justify-between h-screen flex-col overflow-auto  pb-5 px-4 md:px-7 pt-28 w-72;
+}
+.signOutButton {
+  @apply flex gap-7 items-center cursor-pointer p-3
+  bg-primary dark:bg-dark_primary dark:text-text rounded-md 
+  hover:brightness-75 transition-all active:brightness-50;
+}
+
+/* //--------------------------------------------------------------------------------------//
+//                                        MOBILE NAV BAR                                        //
+//--------------------------------------------------------------------------------------// */
+
+.mobileNavContainer {
+  @apply md:hidden fixed bottom-0 text-text dark:text-dark_text bg-background dark:bg-dark_background w-full h-16;
+}
+.mobileNavbarBox {
+  @apply flex items-center sm:gap-20  gap-7 py-3 justify-center;
 }

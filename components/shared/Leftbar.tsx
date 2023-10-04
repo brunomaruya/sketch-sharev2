@@ -45,11 +45,7 @@ export default function Leftbar() {
         </section>
         <SignedIn>
           <SignOutButton signOutCallback={() => router.push('/sign-in')}>
-            <div
-              className="flex gap-7 items-center cursor-pointer p-3
-             bg-primary dark:bg-dark_primary dark:text-text rounded-md 
-             hover:brightness-75 transition-all active:brightness-50"
-            >
+            <div className="signOutButton">
               <ArrowLeftOnRectangleIcon className="w-9 h-9 text-text" />
               <span>Log out</span>
             </div>

@@ -1,6 +1,6 @@
 import { ClerkProvider } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
-import '../clerkStyles.css';
+import '@/public/styles/clerkStyles.css';
 import image from '../../public/images/image.avif';
 import { Image } from 'next/dist/client/image-component';
 

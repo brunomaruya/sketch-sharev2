@@ -3,7 +3,7 @@ import React from 'react';
 import images from '@/data/images.json';
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
-import '../styles/Gallery.css';
+import '@/public/styles/Gallery.css';
 import ScrollReveal from '@/components/libs/ScrollReveal';
 
 export default function HomeGallery() {
